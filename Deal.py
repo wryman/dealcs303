@@ -19,6 +19,7 @@ def main():
 	times=int(input("Enter number of times you want to play:"))
 	switch_win=0
 	i=0
+	print(str("Prize").rjust(2),str("Guess").rjust(4),str("View").rjust(6),str("New Guess").rjust(8))
 	while (i<times):
 		prize_door=random.randint(1,3)
 		guess=random.randint(1,3)
@@ -32,13 +33,8 @@ def main():
 			switch_win+=1
 		switch_probability=switch_win/times
 		no_switch_probability=1-switch_probability
-		print("Prize",  "Guess",  "View",  "New Guess")
-		print("prizedoor=",prize_door)
-		print("guess=",guess)
-		print("view=",view)
-		print("new guess=",newguess)
-		print("switch win=",switch_win)
-		print("Probability of winning if you switch=", round(switch_probability,2))
-		print("Probability of winning if you do not switch=", round(no_switch_probability,2))
 		i+=1
+		print(repr(prize_door).rjust(2),"  ",repr(guess).rjust(4),repr(view).rjust(6),repr(newguess).rjust(8))
+	print("Probability of winning if you switch=", round(switch_probability,2))
+	print("Probability of winning if you do not switch=", round(no_switch_probability,2))
 main()
